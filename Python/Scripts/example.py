@@ -1,1 +1,1 @@
-Write-Host 'Sovereign-Ops-Toolbox: Python Online!'
+print("sovereign-ops-toolbox: Python online")
