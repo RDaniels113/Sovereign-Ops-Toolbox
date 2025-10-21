@@ -1,0 +1,21 @@
+name: shellcheck
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install ShellCheck
+        run: sudo apt-get update && sudo apt-get install -y shellcheck
+      - name: Run ShellCheck
+        run: |
+          if ls bash/**/*.sh >/dev/null 2>&1; then
+            shellcheck bash/**/*.sh
+          else
+            echo "No bash scripts found; skipping."
+          fi
