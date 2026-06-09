@@ -1,398 +1,145 @@
 # Sovereign Ops Toolbox
 
-**Code repository for system administration, information security, and automation.**
+A growing collection of security and infrastructure scripts for practical IT operations.
 
-This repository contains production-ready scripts and tools developed across multiple technical domains. Each script is documented, tested, and designed for real-world operational use.
+This repository contains PowerShell, Python, and Bash utilities focused on system administration, endpoint management, security validation, infrastructure support, and operational automation.
 
-## Repository Purpose
+The objective is simple: build a library of tools that solve real-world problems encountered by systems administrators, infrastructure engineers, and security practitioners.
 
-Sovereign Ops Toolbox is where the code lives - the actual executable work that powers infrastructure, automates tasks, and solves operational problems. Organized by domain and function for easy discovery and reuse.
+---
+
+## Current Status
+
+This repository is actively maintained and developed in public.
+
+Each language section currently contains:
+
+* Functional scripts used for operational tasks
+* Template/example scripts used for structure and future development
+* Supporting documentation where applicable
+
+Scripts are clearly labeled according to their current maturity.
+
+### Status Definitions
+
+| Status      | Description                             |
+| ----------- | --------------------------------------- |
+| Functional  | Tested and usable for intended purpose  |
+| Template    | Example structure or learning reference |
+| In Progress | Under active development                |
+| Planned     | Scheduled for future implementation     |
+| Deprecated  | Retained for historical reference       |
 
 ---
 
 ## Repository Structure
 
-```
+```text
 Sovereign-Ops-Toolbox/
-├── README.md
-├── PowerShell/
-│   ├── ActiveDirectory/
-│   ├── SystemAdministration/
-│   ├── Security/
-│   ├── Automation/
-│   └── Monitoring/
-├── Python/
-│   ├── LogAnalysis/
-│   ├── Automation/
-│   ├── Security/
-│   └── Reporting/
-├── Bash/
-│   ├── SystemAdministration/
-│   ├── Security/
-│   ├── Monitoring/
-│   └── Automation/
+│
+├── powershell/
+│   ├── security/
+│   ├── infrastructure/
+│   └── examples/
+│
+├── python/
+│   ├── security/
+│   ├── infrastructure/
+│   └── examples/
+│
+├── bash/
+│   ├── security/
+│   ├── infrastructure/
+│   └── examples/
+│
 └── docs/
-    └── standards/
 ```
 
 ---
 
-## PowerShell Scripts
+## Language Focus Areas
 
-### Active Directory Management
-**Location:** `/PowerShell/ActiveDirectory/`
+### PowerShell
 
-Scripts for user provisioning, group management, and AD administration.
+Focused on Microsoft-centric administration and automation.
 
-| Script | Purpose | Status |
-|--------|---------|--------|
-| `New-BulkADUser.ps1` | Bulk user creation from CSV | Production |
-| `Get-StaleADAccount.ps1` | Find inactive accounts | Production |
-| `Remove-StaleADComputer.ps1` | Clean up old computer accounts | Production |
-| `Export-ADGroupMembers.ps1` | Report on group memberships | Production |
-| `Set-ADUserPasswordExpiry.ps1` | Manage password policy | Production |
+Examples include:
 
-### System Administration
-**Location:** `/PowerShell/SystemAdministration/`
+* Endpoint administration
+* Windows configuration validation
+* Active Directory and Entra ID support
+* Microsoft 365 operations
+* Infrastructure automation
+* Reporting and diagnostics
 
-Daily system administration tasks and configuration management.
+### Python
 
-| Script | Purpose | Status |
-|--------|---------|--------|
-| `Get-SystemInventory.ps1` | Collect hardware/software inventory | Production |
-| `Install-StandardSoftware.ps1` | Automated software deployment | Production |
-| `Set-SystemHardening.ps1` | Apply security baseline | Production |
-| `Backup-SystemConfiguration.ps1` | Export system settings | Production |
-| `Test-NetworkConnectivity.ps1` | Comprehensive network testing | Production |
+Focused on cross-platform automation, reporting, and data processing.
 
-### Security
-**Location:** `/PowerShell/Security/`
+Examples include:
 
-Security auditing, log analysis, and compliance checking.
+* Security tooling
+* Data collection and analysis
+* Reporting utilities
+* Log parsing
+* Operational workflows
 
-| Script | Purpose | Status |
-|--------|---------|--------|
-| `Get-SecurityAudit.ps1` | Comprehensive security audit | Production |
-| `Export-EventLogSecurity.ps1` | Security log collection | Production |
-| `Test-PasswordPolicy.ps1` | Validate password policies | Production |
-| `Get-LocalAdminMembers.ps1` | Audit local admin accounts | Production |
-| `Search-SuspiciousProcesses.ps1` | Hunt for anomalous processes | Production |
+### Bash
 
-### Automation
-**Location:** `/PowerShell/Automation/`
+Focused on Linux and macOS administration.
 
-Task automation and orchestration scripts.
+Examples include:
 
-| Script | Purpose | Status |
-|--------|---------|--------|
-| `Deploy-GoldenImage.ps1` | Automated Windows deployment | Production |
-| `Update-SystemPatches.ps1` | Scheduled patching automation | Production |
-| `Invoke-DailyHealthCheck.ps1` | Automated system checks | Production |
-| `Send-ReportEmail.ps1` | Automated reporting via email | Production |
-
-### Monitoring
-**Location:** `/PowerShell/Monitoring/`
-
-System monitoring, alerting, and performance tracking.
-
-| Script | Purpose | Status |
-|--------|---------|--------|
-| `Get-ServerHealth.ps1` | Server health dashboard | Production |
-| `Monitor-DiskSpace.ps1` | Disk space monitoring with alerts | Production |
-| `Get-ServiceStatus.ps1` | Service availability monitoring | Production |
-| `Test-WebsiteAvailability.ps1` | Web service monitoring | Production |
+* System validation
+* Log analysis
+* Security checks
+* Configuration auditing
+* Infrastructure support tasks
 
 ---
 
-## Python Scripts
+## Philosophy
 
-### Log Analysis
-**Location:** `/Python/LogAnalysis/`
+The goal of this repository is not to accumulate hundreds of scripts.
 
-Parse, analyze, and correlate log data from various sources.
+The goal is to build a collection of tools that are understandable, maintainable, and useful in real operational environments.
 
-| Script | Purpose | Status |
-|--------|---------|--------|
-| `parse_windows_evtx.py` | Windows Event Log parser | Production |
-| `analyze_web_logs.py` | Web server log analysis | Production |
-| `correlate_auth_events.py` | Authentication event correlation | Production |
-| `detect_brute_force.py` | Brute force attack detection | Production |
+Whenever possible, scripts should include:
 
-### Automation
-**Location:** `/Python/Automation/`
-
-Cross-platform automation and API integration.
-
-| Script | Purpose | Status |
-|--------|---------|--------|
-| `splunk_api_query.py` | Splunk REST API interaction | Production |
-| `bulk_api_operations.py` | Automated API workflows | Production |
-| `data_pipeline.py` | ETL pipeline automation | Development |
-
-### Security
-**Location:** `/Python/Security/`
-
-Security tooling, scanning, and analysis.
-
-| Script | Purpose | Status |
-|--------|---------|--------|
-| `port_scanner.py` | Network port scanning | Production |
-| `hash_comparison.py` | File integrity checking | Production |
-| `password_audit.py` | Password strength auditing | Production |
-| `threat_intel_enrichment.py` | Threat intelligence lookups | Development |
-
-### Reporting
-**Location:** `/Python/Reporting/`
-
-Automated report generation and data visualization.
-
-| Script | Purpose | Status |
-|--------|---------|--------|
-| `generate_security_report.py` | Security metrics dashboard | Production |
-| `export_to_excel.py` | Automated Excel report generation | Production |
-| `create_pdf_report.py` | PDF report builder | Production |
+* Clear documentation
+* Error handling
+* Logging
+* Parameter validation
+* Practical examples
 
 ---
 
-## Bash Scripts
+## Disclaimer
 
-### System Administration
-**Location:** `/Bash/SystemAdministration/`
+This repository is being built in public.
 
-Linux system administration and configuration.
+Scripts marked Functional are intended for operational use.
 
-| Script | Purpose | Status |
-|--------|---------|--------|
-| `system_hardening.sh` | Apply CIS baseline | Production |
-| `backup_configs.sh` | Configuration backup automation | Production |
-| `user_audit.sh` | User account auditing | Production |
-| `service_manager.sh` | Service control and monitoring | Production |
-
-### Security
-**Location:** `/Bash/Security/`
-
-Linux security operations and monitoring.
-
-| Script | Purpose | Status |
-|--------|---------|--------|
-| `security_audit.sh` | Comprehensive security check | Production |
-| `rootkit_check.sh` | Rootkit detection | Production |
-| `suspicious_connections.sh` | Network connection monitoring | Production |
-| `file_integrity_check.sh` | File system integrity | Production |
-
-### Monitoring
-**Location:** `/Bash/Monitoring/`
-
-System and service monitoring for Linux.
-
-| Script | Purpose | Status |
-|--------|---------|--------|
-| `server_health.sh` | Server health monitoring | Production |
-| `disk_monitor.sh` | Disk usage alerts | Production |
-| `log_watcher.sh` | Real-time log monitoring | Production |
-| `process_monitor.sh` | Process tracking and alerting | Production |
-
-### Automation
-**Location:** `/Bash/Automation/`
-
-Task automation and orchestration for Linux.
-
-| Script | Purpose | Status |
-|--------|---------|--------|
-| `daily_backup.sh` | Automated backup operations | Production |
-| `patch_manager.sh` | Automated patching | Production |
-| `deployment_pipeline.sh` | Automated deployment | Development |
+Scripts marked Template or In Progress are provided as references, learning resources, or foundations for future development and should be reviewed before production use.
 
 ---
 
-## Documentation Standards
+## Areas of Interest
 
-All scripts follow these standards:
+Current development priorities include:
 
-### Required Elements
-- **Header comment block** with purpose, author, date, version
-- **Parameter documentation** with examples
-- **Error handling** for common failure modes
-- **Logging** of significant actions
-- **Exit codes** for automation workflows
-
-### Example PowerShell Header
-```powershell
-<#
-.SYNOPSIS
-    Brief description of script purpose
-
-.DESCRIPTION
-    Detailed description of what the script does and how it works
-
-.PARAMETER ParameterName
-    Description of parameter
-
-.EXAMPLE
-    Script-Name.ps1 -ParameterName "Value"
-    Description of what this example does
-
-.NOTES
-    Author: Your Name
-    Date: 2025-10-25
-    Version: 1.0
-    
-.LINK
-    https://github.com/YOUR-USERNAME/Sovereign-Ops-Toolbox
-#>
-```
-
-### Example Python Header
-```python
-"""
-Script Name: script_name.py
-Purpose: Brief description of what the script does
-Author: Your Name
-Date: 2025-10-25
-Version: 1.0
-
-Description:
-    Detailed description of functionality
-
-Usage:
-    python script_name.py [arguments]
-
-Requirements:
-    - Python 3.8+
-    - Required modules listed in requirements.txt
-"""
-```
-
-### Example Bash Header
-```bash
-#!/bin/bash
-################################################################################
-# Script Name: script_name.sh
-# Purpose: Brief description
-# Author: Your Name
-# Date: 2025-10-25
-# Version: 1.0
-#
-# Description:
-#   Detailed description
-#
-# Usage:
-#   ./script_name.sh [arguments]
-#
-# Exit Codes:
-#   0 - Success
-#   1 - Error condition
-################################################################################
-```
+* Endpoint Management
+* Microsoft Intune
+* Microsoft 365 Administration
+* Entra ID
+* Infrastructure Automation
+* Security Operations
+* Compliance Validation
+* Operational Reporting
 
 ---
 
-## Testing
+## License
 
-Scripts in production status have been tested in:
-- Windows Server 2022 / Windows 10/11 (PowerShell)
-- Ubuntu 24.04 LTS (Bash, Python)
-- Homelab environment (all scripts)
+This repository is released under the MIT License.
 
----
-
-## Usage Guidelines
-
-### PowerShell Scripts
-```powershell
-# Download script
-Invoke-WebRequest -Uri "https://raw.githubusercontent.com/YOUR-USERNAME/Sovereign-Ops-Toolbox/main/PowerShell/path/to/script.ps1" -OutFile "script.ps1"
-
-# Check execution policy
-Get-ExecutionPolicy
-
-# Run script
-.\script.ps1 -Parameter "Value"
-```
-
-### Python Scripts
-```bash
-# Clone repository
-git clone https://github.com/YOUR-USERNAME/Sovereign-Ops-Toolbox.git
-cd Sovereign-Ops-Toolbox/Python/path/to/script
-
-# Install dependencies
-pip install -r requirements.txt
-
-# Run script
-python script.py --argument value
-```
-
-### Bash Scripts
-```bash
-# Download script
-wget https://raw.githubusercontent.com/YOUR-USERNAME/Sovereign-Ops-Toolbox/main/Bash/path/to/script.sh
-
-# Make executable
-chmod +x script.sh
-
-# Run script
-./script.sh [arguments]
-```
-
----
-
-## Contributing to This Toolbox
-
-New scripts are added as they're developed and tested. Each script:
-1. Solves a real operational problem
-2. Has been tested in production or homelab environment
-3. Follows documentation standards
-4. Includes error handling and logging
-5. Is committed with clear, descriptive commit messages
-
----
-
-## Security Notice
-
-**These are operational tools.** Some scripts have significant system impact:
-- Account management scripts can modify AD
-- Security scripts may trigger alerts
-- Monitoring scripts collect sensitive data
-- Automation scripts can make bulk changes
-
-**Always:**
-- Review scripts before running in production
-- Test in lab environment first
-- Have backups before making changes
-- Use appropriate credentials and permissions
-- Follow your organization's change management process
-
----
-
-## Skills Demonstrated
-
-✅ **PowerShell** - Active Directory, system administration, automation  
-✅ **Python** - Log analysis, API integration, security tooling  
-✅ **Bash** - Linux administration, security, monitoring  
-✅ **Documentation** - Clear, professional script headers and READMEs  
-✅ **Error Handling** - Robust error checking and logging  
-✅ **Code Organization** - Logical structure, reusable functions  
-✅ **Version Control** - Git workflow, meaningful commits  
-
----
-
-## Stats
-
-**Total Scripts:** 50+ (and growing)  
-**Languages:** PowerShell, Python, Bash  
-**Domains:** Active Directory, System Administration, Security, Automation, Monitoring  
-**Status:** Active development, production-tested  
-
----
-
-## Related Repositories
-
-- [CrashCart](https://github.com/YOUR-USERNAME/CrashCart) - Technical portfolio with project documentation
-- [Win11-Golden-Image](https://github.com/YOUR-USERNAME/Win11-Golden-Image) - Windows deployment automation
-
----
-
-**Last Updated:** October 2025  
-**License:** MIT  
-**Status:** Active Development
