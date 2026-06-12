@@ -84,7 +84,211 @@ Examples include:
 * Log parsing
 * Operational workflows
 
-### Bash
+### Bash# Sovereign-Ops-Toolbox
+
+Operational scripting focused on systems administration, infrastructure, and security.
+
+This repository contains practical PowerShell tools developed from real troubleshooting scenarios and day-to-day operational work. The emphasis is on clarity, maintainability, and solving actual problems rather than building frameworks for their own sake.
+
+---
+
+## Current Focus
+
+* PowerShell automation
+* Infrastructure operations
+* Security validation
+* Identity administration
+* Repeatable troubleshooting workflows
+
+---
+
+## Repository Structure
+
+```text
+Sovereign-Ops-Toolbox/
+├── examples/
+├── infrastructure/
+├── security/
+└── docs/
+```
+
+---
+
+## Examples
+
+Example scripts designed to teach concepts clearly and solve common operational problems.
+
+### Current Scripts
+
+#### Test-DeviceOnlineStatus.ps1
+
+Tests whether one or more devices respond to ping.
+
+Features:
+
+* Supports manual input
+* Supports TXT input
+* Supports CSV input
+* Removes duplicate targets
+* Returns structured output objects
+* Demonstrates arrays, looping, and input normalization
+
+Example use:
+
+```powershell
+.\Test-DeviceOnlineStatus.ps1 -Target "google.com"
+
+.\Test-DeviceOnlineStatus.ps1 -InputTxt .\devices.txt
+
+.\Test-DeviceOnlineStatus.ps1 -InputCsv .\devices.csv
+```
+
+Purpose:
+
+> "Can I reach the device?"
+
+---
+
+## Infrastructure
+
+Operational tools intended for systems and infrastructure administration.
+
+### Current Scripts
+
+#### New-BulkADUser.ps1
+
+Creates Active Directory users in bulk from structured input.
+
+Features:
+
+* Bulk user creation
+* Structured input processing
+* Reduced repetitive administration
+* Identity lifecycle automation
+
+Purpose:
+
+> Automate common onboarding activities.
+
+---
+
+#### Test-DeviceOpenPorts.ps1
+
+Performs network port checks against target systems.
+
+Features:
+
+* Port availability testing
+* Service validation
+* Network diagnostics
+* Operational troubleshooting
+
+Purpose:
+
+> "What services are reachable on this device?"
+
+---
+
+### Infrastructure Focus Areas
+
+* Active Directory administration
+* Identity lifecycle operations
+* Network diagnostics
+* Operational reporting
+* Repeatable infrastructure automation
+
+---
+
+## Security
+
+Security-focused scripts intended to identify findings and support defensive operations.
+
+### Current Scripts
+
+#### Test-DeviceExposureStatus.ps1
+
+Evaluates exposed services on target systems and reports findings based on severity.
+
+Features:
+
+* Supports manual input
+* Supports TXT input
+* Supports CSV input
+* Uses predefined security port profiles
+* Reports findings only when exposures exist
+* Assigns severity ratings
+* Provides recommendations
+
+Purpose:
+
+> "Should I be concerned about what I'm seeing?"
+
+Example findings include:
+
+* Telnet exposure
+* RDP exposure
+* SMB exposure
+* Unsecured HTTP services
+* Administrative surface review
+
+---
+
+### Security Focus Areas
+
+* Exposure assessment
+* Baseline validation
+* Administrative surface review
+* Defensive visibility
+* Security-oriented reporting
+
+---
+
+## Philosophy
+
+The scripts in this repository follow a simple progression:
+
+```text
+Identify the problem
+↓
+Create a working solution
+↓
+Refine the solution
+↓
+Document the process
+↓
+Build reusable operational tooling
+```
+
+The goal is not to build the largest collection of scripts.
+
+The goal is to build tools that are understandable, maintainable, and useful.
+
+---
+
+## Current Status
+
+This repository is actively evolving.
+
+New scripts are added as operational challenges are encountered and refined into reusable solutions.
+
+Quality and practical value take priority over quantity.
+
+---
+
+## Technologies
+
+* PowerShell
+* Active Directory
+* Windows Administration
+* Infrastructure Operations
+* Security Operations
+
+---
+
+## License
+
+This project is licensed under the terms of the LICENSE file included in this repository.
+
 
 Focused on Linux and macOS administration.
 
