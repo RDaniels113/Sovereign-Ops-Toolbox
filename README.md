@@ -105,6 +105,22 @@ Purpose:
 
 > What services are reachable?
 
+
+### Get-DeviceComplianceStatus.ps1
+
+Retrieves Microsoft Intune managed device compliance information using Microsoft Graph. Useful for endpoint administration, compliance reviews, and M365 operational reporting.
+
+**Key capabilities:**
+
+* Connects to Microsoft Graph
+* Retrieves Intune managed device status
+* Displays device compliance states
+* Summarizes compliance results
+* Optionally exports results to CSV
+
+**Technologies:** PowerShell, Microsoft Graph, Intune, Microsoft 365
+
+
 ---
 
 ### Security
