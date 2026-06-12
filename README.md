@@ -1,18 +1,28 @@
-# Sovereign-Ops-Toolbox
+# Sovereign Ops Toolbox
 
-Operational scripting focused on systems administration, infrastructure, and security.
+Practical automation for systems administration, infrastructure, and security operations.
 
-This repository contains practical automation tools developed from real troubleshooting scenarios and day-to-day operational work. The emphasis is on clarity, maintainability, and solving actual problems rather than building frameworks for their own sake.
+Sovereign Ops Toolbox contains scripts developed from real troubleshooting scenarios and day-to-day operational work. The emphasis is on clarity, maintainability, and solving actual problems rather than building frameworks for their own sake.
+
+The goal is simple:
+
+**Find the repetitive work. Automate it. Document it. Improve it.**
 
 ---
 
-## Language Focus
+## Repository Purpose
 
-PowerShell is the primary language used throughout this repository and reflects the majority of my operational experience.
+This repository exists to transform operational experience into reusable tooling.
 
-Python implementations demonstrate cross-platform automation capability and continued growth beyond the Microsoft ecosystem.
+These scripts aren't academic exercises. They're built to answer real questions encountered during support, administration, and troubleshooting.
 
-Bash implementations demonstrate Linux operational familiarity and shell scripting fundamentals.
+Questions like:
+
+* Is the device online?
+* What services are exposed?
+* What ports are open?
+* Can this task be automated?
+* How do we solve this once instead of twenty times?
 
 ---
 
@@ -20,22 +30,21 @@ Bash implementations demonstrate Linux operational familiarity and shell scripti
 
 ```text
 Sovereign-Ops-Toolbox/
-├── powershell/
-│   ├── examples/
-│   ├── infrastructure/
-│   └── security/
-│
-├── python/
-│   ├── examples/
-│   ├── infrastructure/
-│   └── security/
-│
-├── bash/
-│   ├── examples/
-│   ├── infrastructure/
-│   └── security/
-│
-├── docs/
+├── Powershell/
+│   ├── Examples/
+│   ├── Infrastructure/
+│   └── Security/
+├── Python/
+│   ├── Examples/
+│   ├── Infrastructure/
+│   └── Security/
+├── Bash/
+│   ├── Examples/
+│   ├── Infrastructure/
+│   └── Security/
+├── Docs/
+├── LICENSE
+├── SECURITY.md
 └── README.md
 ```
 
@@ -47,20 +56,19 @@ Sovereign-Ops-Toolbox/
 
 #### Test-DeviceOnlineStatus.ps1
 
-Tests whether one or more devices respond to ping.
+Determines whether one or more devices respond to ping.
 
 Features:
 
 * Manual input
 * TXT input
 * CSV input
-* Input normalization
 * Target deduplication
-* Structured output using PSCustomObject
+* PSCustomObject output
 
 Purpose:
 
-> "Can I reach the device?"
+> Can I reach the device?
 
 ---
 
@@ -68,34 +76,34 @@ Purpose:
 
 #### New-BulkADUser.ps1
 
-Creates Active Directory users in bulk from structured input.
+Automates Active Directory user creation from structured input.
 
 Features:
 
 * Bulk user creation
-* Structured data processing
-* Reduced repetitive administration
 * Identity lifecycle automation
+* Structured processing
+* Reduced repetitive administration
 
 Purpose:
 
-> Automate common onboarding activities.
+> How do we onboard efficiently?
 
 ---
 
 #### Test-DeviceOpenPorts.ps1
 
-Performs network port checks against target systems.
+Validates TCP connectivity against target systems.
 
 Features:
 
-* TCP port validation
-* Service troubleshooting
+* TCP port testing
+* Service validation
 * Operational diagnostics
 
 Purpose:
 
-> "What services are reachable on this device?"
+> What services are reachable?
 
 ---
 
@@ -103,11 +111,10 @@ Purpose:
 
 #### Test-DeviceExposureStatus.ps1
 
-Evaluates exposed services on target systems.
+Evaluates exposed services using predefined security profiles.
 
 Features:
 
-* Security port profiles
 * Severity ratings
 * Recommendations
 * Findings-based reporting
@@ -115,162 +122,75 @@ Features:
 
 Purpose:
 
-> "Should I be concerned about what I'm seeing?"
+> Should I be concerned about what I'm seeing?
 
 ---
 
 ## Python
 
-### Examples
+Cross-platform implementations demonstrating continued growth beyond the Microsoft ecosystem.
 
-#### test_device_online_status.py
+* test_device_online_status.py
+* test_device_open_ports.py
+* test_device_exposure_status.py
 
-Tests whether one or more devices respond to ping.
-
-Features:
+Focus Areas:
 
 * argparse
-* TXT input
-* CSV input
-* subprocess execution
-* Target deduplication
-* Structured results
-
-Purpose:
-
-> "Can I reach the device?"
-
----
-
-### Infrastructure
-
-#### test_device_open_ports.py
-
-Performs TCP port validation against target systems.
-
-Features:
-
 * socket programming
-* Configurable port testing
-* Network diagnostics
-* Service validation
-* Structured output
-
-Purpose:
-
-> "What services are reachable on this device?"
-
----
-
-### Security
-
-#### test_device_exposure_status.py
-
-Evaluates exposed services using predefined security profiles.
-
-Features:
-
-* Findings-based reporting
-* Severity classification
-* Recommendations
-* Security profile mapping
-* Defensive visibility
-
-Purpose:
-
-> "Should I be concerned about what I'm seeing?"
+* subprocess execution
+* structured output
+* defensive visibility
 
 ---
 
 ## Bash
 
-### Examples
+Linux-native implementations focused on operational fundamentals.
 
-#### test-device-online-status.sh
+* test-device-online-status.sh
+* test-device-open-ports.sh
+* test-device-exposure-status.sh
 
-Tests whether one or more devices respond to ping.
+Focus Areas:
 
-Features:
-
-* TXT input
-* CSV input
-* Cross-platform shell fundamentals
-* Target deduplication
-* Basic operational validation
-
-Purpose:
-
-> "Can I reach the device?"
-
----
-
-### Infrastructure
-
-#### test-device-open-ports.sh
-
-Performs TCP port checks against target systems.
-
-Features:
-
-* Service validation
-* Network diagnostics
-* Operational troubleshooting
-* Linux-native tooling
-
-Purpose:
-
-> "What services are reachable on this device?"
-
----
-
-### Security
-
-#### test-device-exposure-status.sh
-
-Evaluates exposed services and reports findings.
-
-Features:
-
-* Findings-based reporting
-* Severity classifications
-* Security recommendations
-* Defensive visibility
-
-Purpose:
-
-> "Should I be concerned about what I'm seeing?"
+* shell scripting
+* diagnostics
+* service validation
+* defensive visibility
+* cross-platform administration
 
 ---
 
 ## Philosophy
 
-The scripts in this repository follow a simple progression:
+Every script follows the same progression:
 
 ```text
 Identify the problem
 ↓
-Create a working solution
+Build a working solution
 ↓
-Refine the solution
+Refine the implementation
 ↓
 Document the process
 ↓
-Build reusable operational tooling
+Create reusable operational tooling
 ```
 
-The goal is not to build the largest collection of scripts.
+The objective is not to build the largest script repository.
 
-The goal is to build tools that are understandable, maintainable, and useful.
+The objective is to build tools that are understandable, maintainable, and genuinely useful.
 
 ---
 
 ## Current Status
 
-This repository is actively evolving.
+Sovereign Ops Toolbox is actively evolving.
 
-New scripts are added as operational challenges are encountered and refined into reusable solutions.
+New scripts are added as operational challenges emerge and mature into reusable solutions.
 
-Quality and practical value take priority over quantity.
+Practical value always takes priority over quantity.
 
 ---
 
@@ -287,6 +207,12 @@ Quality and practical value take priority over quantity.
 
 ---
 
-## License
+## Author
 
-This project is licensed under the terms of the LICENSE file included in this repository.
+**Ron Daniels**
+
+Veteran. Systems builder. Founder @ Cyberron.
+
+* GitHub: https://github.com/RDaniels113
+* Website: https://cyberron.org
+* LinkedIn: https://linkedin.com/in/rdaniels113
